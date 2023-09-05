@@ -14,9 +14,10 @@
 </head>
 <header>
 	<img src="../logo_GSB_64.png" alt="logo">
-    <h1>GSB Application Note de Frais</h1>
-    <!-- Le contenu de la page est modifiable -->
-    <?= $this->renderSection("header") ?>
+    <h1>GSB Application Note de Frais
+    <!-- Le h1 de la page est modifiable -->
+    <?= $this->renderSection("h1") ?>
+    </h1>
 </header>
 <body style="margin: 50px;" class="text-bg-dark p-3">
 
