@@ -2,7 +2,7 @@
 
 <?= $this->section("titre") ?>GSB 2SIO<?= $this->endSection() ?>
 
-<?= $this->section("header") ?>
+<?= $this->section("h1") ?>
 
 	<a class='btn btn-success btn-sm' href='selection.php'>Changer de mois</a>
 	<a class='btn btn-danger btn-sm' href='deconnexion.php'>Se déconnecter</a>
