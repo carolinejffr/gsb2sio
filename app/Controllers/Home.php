@@ -15,7 +15,7 @@ class Home extends BaseController
 
         return view('Home/index', 
         [
-            "fichefrais" => $data
+            "visiteur" => $data
         ]);
     }
 }
