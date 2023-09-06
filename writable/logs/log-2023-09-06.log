@@ -4,3 +4,14 @@ in APPPATH\Controllers\Home.php on line 12.
  2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
  3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-06 11:27:15 --> Undefined array key "idVisiteur"
+in APPPATH\Views\Note\index.php on line 31.
+ 1 APPPATH\Views\Note\index.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "idVisiteur"', 'C:\\wamp64\\www\\gsb2sio\\app\\Views\\Note\\index.php', 31)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\gsb2sio\\app\\Views\\Note\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Note/index', [], true)
+ 5 APPPATH\Controllers\Note.php(18): view('Note/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Note->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Note))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

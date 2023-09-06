@@ -6,5 +6,5 @@ use CodeIgniter\Model;
 
 class HomeModel extends Model
 {
-    protected $table = "visiteur";
+    protected $table = "fichefrais";
 }
