@@ -9,7 +9,7 @@
 <?= $this->section("contenu") ?>
 
 	<p>Bonjour ! Le site est en construction.</p>
-    <p>Ici, il y aura le formulaire de connexion.</p>
-    <button onclick="window.location.href='selection';">Accéder à la sélection du mois</button>
+    <p>Ici, il y aura la page de sélection du mois.</p>
+    <button onclick="window.location.href='note';">Accéder aux notes de frais</button>
 
 <?= $this->endSection() ?>
