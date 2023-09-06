@@ -1,3 +1,5 @@
+<?= $this->renderSection("preHTML") ?>
+
 <!DOCTYPE HTML>
 <html class="text-bg-dark p-3">
 <head>

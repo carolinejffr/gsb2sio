@@ -48,4 +48,18 @@ class Home extends BaseController
     {
         return view('Edition/index');
     }
+
+    public function login(): string
+    {
+        return view('Login/index');
+    }
+
+    public function deconnexion(): string
+    {
+        return view('Deconnexion/index');
+    }
+    public function supprimer(): string
+    {
+        return view('Supprimer/index');
+    }
 }
