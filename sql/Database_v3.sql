@@ -34,9 +34,9 @@ create table if not exists `FicheFrais` (
     `mois` varchar(10) not null,
     `nbJustificatifs` int not null,
     `montantValide` int not null,
-    `dateModif` date not null,
+    `dateModif` datetime not null,
     `idEtat` varchar(2) not null,
-    constraint `PK_FicheFrais` primary key (`idVisiteur`,`mois`),
+    constraint `PK_FicheFrais` primary key (`idVisiteur`,`mois`,`dateModif`),
     constraint `FK_FicheFrais_idEtat` foreign key (`idEtat`) references Etat(id),
     constraint `FK_FicheFrais_idVisiteur` foreign key (`idVisiteur`) references Visiteur(id)
 )ENGINE=InnoDB, CHARSET=UTF8MB4;
