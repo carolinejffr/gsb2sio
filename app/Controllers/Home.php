@@ -38,4 +38,14 @@ class Home extends BaseController
             "fichefrais" => $data
         ]);
     }
+
+    public function nouveau(): string
+    {
+        return view('Nouveau/index');
+    }
+
+    public function edition(): string
+    {
+        return view('Edition/index');
+    }
 }
