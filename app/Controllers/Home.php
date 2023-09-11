@@ -58,14 +58,15 @@ class Home extends BaseController
         $data['id'] = $model::getIdUtilisateur($login);
         $data['nom'] = $model::getNomUtilisateur($login);
         $data['prenom'] = $model::getPrenomUtilisateur($login);
-        $data['reponse'] = $model::getReponse();
-        $data['donnees'] = $model::getFicheFrais($_POST['mois']);
+        $data['reponse'] = $model::getFicheFrais($_POST['mois']);
 
         return view('Note/note', $data);
     }
 
     public function nouveau(): string
     {
+        $model = new HomeModel;
+        
         return view('Nouveau/nouveau');
     }
 

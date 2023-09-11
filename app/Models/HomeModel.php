@@ -82,8 +82,8 @@ class HomeModel extends Model
     }
     public static function getFicheFrais($mois)
     {
-        $donnees = self::$bdd->prepare('SELECT * FROM gsbv2.FicheFrais WHERE FicheFrais.mois = ?');
-        $donnees->execute(array($mois));
-        return $donnees;
+        $reponse = self::$bdd->prepare('SELECT * FROM gsbv2.FicheFrais WHERE FicheFrais.mois = ?');
+        $reponse->execute(array($mois));
+        return $reponse;
     }
 }
