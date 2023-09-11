@@ -84,7 +84,8 @@
                 }
             // Modification SQL
             
-            $aujourdhui = date('Y-m-d');
+            date_default_timezone_set('Europe/Paris');
+            $aujourdhui = date('Y-m-d H:i:s');
             
             $reponse = $bdd->prepare("UPDATE FicheFrais ".
             "SET mois = '$mois', nbJustificatifs = '$nbJustificatifs', montantValide = '$montantValide', dateModif = '$aujourdhui', idEtat = '$idEtat' " .
