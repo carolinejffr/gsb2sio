@@ -1,21 +1,14 @@
 <?= $this->extend("layouts/default") ?>
 
 <?= $this->section("preHTML") ?>
-<?php session_start(); 
+<?php 
 
 
 // On vérifie que l'utilisateur est connecté.
-if (!isset( $_SESSION['login']) || !isset( $_SESSION['mdp']))
+if (esc($login) == NULL)
 {
 	header("location:index.php?error=3");
 	exit;
-}
-else
-{
-	if (isset($_POST['mois']))
-	{
-		$_SESSION['mois'] = $_POST['mois'];
-	}
 }
 ?>
 <?= $this->endSection() ?>
@@ -33,10 +26,10 @@ else
 
 <p> Vous êtes connecté en tant que 
 	<?php 
-		echo $_SESSION['prenom']; 
+		echo esc($prenom); 
 	?> 
 	<?php 
-		echo $_SESSION['nom']; 
+		echo esc($nom);
 	?>.
 	</p>
 	<a class="btn btn-primary" href="nouveau" role="button">Nouveau</a>
@@ -55,18 +48,8 @@ else
 		</thead>	
 			<tbody>
 			<?php
-try
-{
-	// Connexion à la BDD
-	$bdd = new PDO('mysql:host=localhost;dbname=gsbv2;charset=utf8', 'root', 'password', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-}
-catch (Exception $e)
-{
-	die('Erreur : ' . $e->getMessage());
-}
-$reponse = $bdd->prepare('SELECT * FROM gsbv2.FicheFrais WHERE FicheFrais.mois = ?');
-$reponse->execute(array($_SESSION['mois']));
-
+			$donnees = esc($donnees);
+			$reponse = esc($reponse);
 		while ($donnees = $reponse->fetch())
 		{
 			echo "
@@ -91,8 +74,6 @@ $reponse->execute(array($_SESSION['mois']));
 					"</td>
 				</tr>";
 		}
-		
-		$reponse->closeCursor();
 	?>
 
 			</tbody>

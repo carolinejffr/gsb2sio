@@ -1,8 +1,7 @@
 <?= $this->extend("layouts/default") ?>
 
 <?= $this->section("preHTML") ?>
-    <?php 
-    session_start();
+    <?php session_start();
     $mois = date('n');
     ?>
 <?= $this->endSection() ?>
@@ -20,6 +19,7 @@
         <div class="row mb-3">
             <label class="col-sm-3 col-form-label">Mois (1 = janvier, etc.)</label>
             <div class="col-sm-6">
+            <input type="hidden" name="login" value="<?php echo $_SESSION['login'] ?>">
             <input type="number" class="form-control" name="mois" value="<?php echo $mois; ?>" min="1" max="12" step="1">
         </div>
         <div class="offset-sm-3 col-sm-3 d-grid">
