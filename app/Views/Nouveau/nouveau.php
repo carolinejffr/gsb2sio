@@ -1,24 +1,15 @@
 <?= $this->extend("layouts/default") ?>
 
 <?= $this->section("preHTML") ?>
-    <?php session_start(); 
+    <?php section_start();
 
     // On vérifie que l'utilisateur est connecté.
-    if (!isset( $_SESSION['login']) || !isset( $_SESSION['mdp']))
+    if (esc($login) == NULL)
     {
         header("location:index.php?error=3");
         exit;
     }
 
-    try
-    {
-        // Connexion à la BDD
-        $bdd = new PDO('mysql:host=localhost;dbname=gsbv2;charset=utf8', 'root', 'password', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-    }
-    catch (Exception $e)
-    {
-        die('Erreur : ' . $e->getMessage());
-    }
     $reponse = $bdd->prepare('SELECT * FROM gsbv2.FicheFrais');
     $reponse->execute(array());
 

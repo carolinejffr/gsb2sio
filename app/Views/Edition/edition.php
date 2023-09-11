@@ -111,7 +111,7 @@
 
 <?= $this->section("contenu") ?>
 
-<h2>Modification</h2>
+<h2>Edition</h2>
 	
 	<?php
 	if (!empty($errorMessage))

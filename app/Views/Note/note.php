@@ -1,7 +1,8 @@
 <?= $this->extend("layouts/default") ?>
 
 <?= $this->section("preHTML") ?>
-<?php 
+<?php session_start(); 
+$_SESSION['mois'] = $_POST['mois'];
 
 
 // On vérifie que l'utilisateur est connecté.
@@ -48,8 +49,9 @@ if (esc($login) == NULL)
 		</thead>	
 			<tbody>
 			<?php
-			$donnees = esc($donnees);
-			$reponse = esc($reponse);
+			
+		$reponse = esc($reponse);
+
 		while ($donnees = $reponse->fetch())
 		{
 			echo "
@@ -63,7 +65,7 @@ if (esc($login) == NULL)
 					<td>$donnees[idEtat]</td>
 					<td>";
 
-					if ($donnees['idVisiteur'] == $_SESSION['id'])
+					if ($donnees['idVisiteur'] == esc($id))
 					{
 						echo "
 						<a class='btn btn-primary btn-sm' href='edition?idFrais=$donnees[idFrais]'>Modifier</a>
@@ -74,6 +76,8 @@ if (esc($login) == NULL)
 					"</td>
 				</tr>";
 		}
+		
+		$reponse->closeCursor();
 	?>
 
 			</tbody>
