@@ -81,6 +81,18 @@ class Home extends BaseController
     }
     public function supprimer(): string
     {
+        $model = new HomeModel;
+        $id = $_GET['idFrais'];
+        // On se connecte à la BDD
+        try
+        {
+            $bdd = $model::ConnexionBDD();
+        }
+        catch (Exception $e)
+	    {
+		    die('Erreur : ' . $e->getMessage());
+	    }
+        $model::supprimerLigne($bdd, $id);
         return view('Supprimer/supprimer');
     }
 }
