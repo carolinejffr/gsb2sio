@@ -1,28 +1,29 @@
+<?= $this->extend("layouts/default") ?>
+
+<?= $this->section("preHTML") ?>
 <?php session_start(); 
 
 // On vérifie que l'utilisateur est connecté.
-if (!isset( $_SESSION['login']) || !isset( $_SESSION['mdp']))
+if ($_SESSION['login'] == NULL)
 {
 	header("location:index.php?error=3");
 	exit;
 }
-if ( isset($_GET["idFrais"]) ) 
-{
-	try
-	{
-		// Connexion à la BDD
-		$bdd = new PDO('mysql:host=localhost;dbname=gsbv2;charset=utf8', 'root', 'password', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-	}
-	catch (Exception $e)
-	{
-		die('Erreur : ' . $e->getMessage());
-	}
-
-	$reponse = $bdd->prepare('DELETE FROM gsbv2.FicheFrais WHERE idFrais = ?');
-	$reponse->execute(array($_GET['idFrais']));
-}
-
-header("location:note");
-exit;
-
 ?>
+<?= $this->endSection() ?>
+
+<?= $this->section("titre") ?>GSB 2SIO<?= $this->endSection() ?>
+
+<?= $this->section("h1") ?>
+
+<?= $this->endSection() ?>
+
+<?= $this->section("contenu") ?>
+
+<p>La ligne a bien été supprimée.</p>
+<form action="note" method="post">
+<input type='hidden' id='login' name='login' value='<?php echo $_SESSION['login'] ?>'/>
+<input type='hidden' id='mois' name='mois' value='<?php echo $_SESSION['mois'] ?>'/>
+<input type='submit' class='btn btn-success btn-sm'value='OK'/>
+</form>
+<?= $this->endSection() ?>

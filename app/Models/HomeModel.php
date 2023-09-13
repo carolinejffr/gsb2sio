@@ -59,6 +59,7 @@ class HomeModel extends Model
         $id = $reponse->fetch()[0];
         return $id;
     }
+
     public static function getNomUtilisateur($login)
     {
        // Récupération du nom
@@ -67,6 +68,7 @@ class HomeModel extends Model
        $nom = $reponse->fetch()[0];
        return $nom; 
     }
+
     public static function getPrenomUtilisateur($login)
     {
        // Récupération du nom
@@ -75,15 +77,23 @@ class HomeModel extends Model
        $prenom = $reponse->fetch()[0];
        return $prenom; 
     }
+
     public static function getReponse()
     {
         $reponse = self::$bdd->prepare('SELECT * FROM gsbv2.FicheFrais WHERE FicheFrais.mois = ?');
         return $reponse;
     }
+
     public static function getFicheFrais($mois)
     {
         $reponse = self::$bdd->prepare('SELECT * FROM gsbv2.FicheFrais WHERE FicheFrais.mois = ?');
         $reponse->execute(array($mois));
         return $reponse;
+    }
+
+    public static function supprimerLigne($bdd, $id)
+    {
+        $reponse = $bdd->prepare('DELETE FROM gsbv2.FicheFrais WHERE idFrais = ?');
+	    $reponse->execute(array($id));
     }
 }
