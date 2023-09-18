@@ -1,16 +1,16 @@
 <?= $this->extend("layouts/default") ?>
 
 <?= $this->section("preHTML") ?>
-    <?php session_start();
+    <?php
 
     // On vérifie que l'utilisateur est connecté.
-    if (esc($login) == NULL)
+    if ($_SESSION['login'] == NULL)
     {
         header("location:index.php?error=3");
         exit;
     }
 
-    $reponse = $bdd->prepare('SELECT * FROM gsbv2.FicheFrais');
+    $reponse = esc($reponse);
     $reponse->execute(array());
 
             while ($donnees = $reponse->fetch())
@@ -32,11 +32,7 @@
     {
         
         // Lecture de la ligne correspondante à l'ID dans la database.
-        $sql = "SELECT * FROM FicheFrais";
-        $result = $bdd->query($sql);
-        
-        $row = $result->fetch();
-        
+        $row = esc($row);    
         
         $mois = date('n');
         $nbJustificatifs = 0;
@@ -61,7 +57,7 @@
             // Modification SQL
             
             
-            $idVisiteur = $_SESSION['id'];
+            $idVisiteur = esc($id);
 
             date_default_timezone_set('Europe/Paris');
             $aujourdhui = date('Y-m-d H:i:s');
@@ -73,7 +69,7 @@
             
             $successMessage = "Note de frais correctement éditée";
                 
-            header("location:note");
+            header("location:validation");
             exit;
             $reponse->closeCursor();
         } while (false);

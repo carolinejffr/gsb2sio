@@ -72,7 +72,7 @@ if (esc($login) == NULL)
 					{
 						echo "
 						<a class='btn btn-primary btn-sm' href='edition?idFrais=$donnees[idFrais]'>Modifier</a>
-						<a class='btn btn-danger btn-sm' href='supprimer?idFrais=$donnees[idFrais]'>Supprimer</a>
+						<a class='btn btn-danger btn-sm' href='validation?idFrais=$donnees[idFrais]'>Supprimer</a>
 						";
 					}
 					echo 

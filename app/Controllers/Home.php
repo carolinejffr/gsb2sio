@@ -65,6 +65,8 @@ class Home extends BaseController
 
     public function nouveau(): string
     {
+        
+        session_start();
         $model = new HomeModel;
         try
         {
@@ -74,9 +76,15 @@ class Home extends BaseController
 	    {
 		    die('Erreur : ' . $e->getMessage());
 	    }
-        $login = $_POST['login'];
+
+        $login = $_SESSION['login'];
         $data['login'] = $login;
+
+        $data['id'] = $model::getIdUtilisateur($login);
         
+        $data['reponse'] = $model::getReponse();
+        $data['row'] =  $model::getRow();
+
         return view('Nouveau/nouveau', $data);
     }
 
@@ -105,6 +113,10 @@ class Home extends BaseController
 
         $model::supprimerLigne($bdd, $id);
         
-        return view('Supprimer/supprimer');
+        return view('Validation/validation');
+    }
+    public function ajouter(): string
+    {
+        return view('Validation/validation');
     }
 }
