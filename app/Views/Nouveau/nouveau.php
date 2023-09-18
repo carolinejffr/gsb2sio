@@ -1,7 +1,7 @@
 <?= $this->extend("layouts/default") ?>
 
 <?= $this->section("preHTML") ?>
-    <?php section_start();
+    <?php session_start();
 
     // On vérifie que l'utilisateur est connecté.
     if (esc($login) == NULL)

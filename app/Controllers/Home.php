@@ -66,8 +66,18 @@ class Home extends BaseController
     public function nouveau(): string
     {
         $model = new HomeModel;
+        try
+        {
+            $bdd = $model::ConnexionBDD();
+        }
+        catch (Exception $e)
+	    {
+		    die('Erreur : ' . $e->getMessage());
+	    }
+        $login = $_POST['login'];
+        $data['login'] = $login;
         
-        return view('Nouveau/nouveau');
+        return view('Nouveau/nouveau', $data);
     }
 
     public function edition(): string
@@ -92,7 +102,9 @@ class Home extends BaseController
 	    {
 		    die('Erreur : ' . $e->getMessage());
 	    }
+
         $model::supprimerLigne($bdd, $id);
+        
         return view('Supprimer/supprimer');
     }
 }
