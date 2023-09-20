@@ -12,8 +12,9 @@
 
 <?= $this->section("contenu") ?>
 
-<h2>Modification</h2>
+<h2>Nouveau</h2>
 <form action="validation" method="post">
+	<input type="hidden" id="modeEdition" name="modeEdition"  value="0"/>
 	<input type="hidden" id="idVisiteur" name="idVisiteur"  value="<?php echo esc($id); ?>"/>
 	
 	<label>Mois en cours (non-modifiable)</label>

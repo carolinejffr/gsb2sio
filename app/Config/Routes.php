@@ -12,9 +12,8 @@ $routes->post('note', 'Home::note');
 $routes->get('nouveau', 'Home::nouveau');
 $routes->post('nouveau', 'Home::nouveau');
 $routes->get('edition', 'Home::edition');
-$routes->post('edition', 'Home::edition');
-$routes->get('validation', 'Home::supprimer');
-$routes->post('validation', 'Home::ajouter');
+$routes->get('validation', 'Home::validation');
+$routes->post('validation', 'Home::validation');
 $routes->get('deconnexion', 'Home::deconnexion');
 $routes->post('login', 'Home::login');
 // Redirige sur index car on est pas censé pouvoir y aller en GET

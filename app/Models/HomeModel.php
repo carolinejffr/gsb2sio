@@ -114,4 +114,22 @@ class HomeModel extends Model
         VALUES ('$idVisiteur', '$mois', '$nbJustificatifs', '$montantValide', '$aujourdhui', '$idEtat');");
 		$reponse->execute(array());
     }
+
+    public static function afficherLigne($idFrais)
+    {
+        $sql = "SELECT * FROM FicheFrais WHERE idFrais = $idFrais";
+        $result = self::$bdd->query($sql);
+        
+        $row = $result->fetch();
+
+        return $row;
+    }
+
+    public static function modifierLigne($mois, $nbJustificatifs, $montantValide, $aujourdhui, $idEtat, $idFrais)
+    {
+        $reponse = self::$bdd->prepare("UPDATE FicheFrais ".
+        "SET mois = '$mois', nbJustificatifs = '$nbJustificatifs', montantValide = '$montantValide', dateModif = '$aujourdhui', idEtat = '$idEtat' " .
+        "WHERE idFrais = '$idFrais'");
+        $reponse->execute(array());
+    }
 }
