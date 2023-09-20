@@ -81,9 +81,10 @@ class Home extends BaseController
         $data['login'] = $login;
 
         $data['id'] = $model::getIdUtilisateur($login);
-        
-        $data['reponse'] = $model::getReponse();
-        $data['row'] =  $model::getRow();
+        $data['mois'] = $_SESSION['mois'];
+
+        date_default_timezone_set('Europe/Paris');
+	    $data['aujourdhui'] = date('Y-m-d H:i:s');
 
         return view('Nouveau/nouveau', $data);
     }
@@ -115,10 +116,11 @@ class Home extends BaseController
         
         return view('Validation/validation');
     }
-    public function nouveauPost(): string
+
+    public function ajouter(): string
     {
         $model = new HomeModel;
-        $id = $_GET['idFrais'];
+
         // On se connecte à la BDD
         try
         {
@@ -128,38 +130,15 @@ class Home extends BaseController
 	    {
 		    die('Erreur : ' . $e->getMessage());
 	    }
-        // si méthode POST : update des données
-        $mois = date('n');
-        $nbJustificatifs = $_POST["nbJustificatifs"];
-        $montantValide = $_POST["montantValide"];
-        $idEtat = $_POST["idEtat"];
-        
-        do {
-            // On vérifie que tous les champs sont renseignés
-            if (empty($mois) || empty($nbJustificatifs) || empty($montantValide) || empty($idEtat))
-                {
-                    $errorMessage = "Remplissez tous les champs";
-                    break;
-                }
-            // Modification SQL
-            
-            
-            $idVisiteur = esc($id);
 
-            date_default_timezone_set('Europe/Paris');
-            $aujourdhui = date('Y-m-d H:i:s');
-            
-            $reponse = $bdd->prepare("INSERT INTO `gsbv2`.`FicheFrais` 
-            (`idVisiteur`, `mois`, `nbJustificatifs`, `montantValide`, `dateModif`, `idEtat`) 
-            VALUES ('$idVisiteur', '$mois', '$nbJustificatifs', '$montantValide', '$aujourdhui', '$idEtat');");
-            $reponse->execute(array());
-            
-            $successMessage = "Note de frais correctement éditée";
-                
-            header("location:validation");
-            exit;
-            $reponse->closeCursor();
-        } while (false);
+        $idVisiteur = $_POST['idVisiteur'];
+        $mois = $_POST['mois'];
+        $nbJustificatifs = $_POST['nbJustificatifs'];
+        $montantValide = $_POST['montantValide'];
+        $aujourdhui = $_POST['aujourdhui'];
+        $idEtat = $_POST['idEtat'];
+        $model::ajouterLigne($idVisiteur, $mois, $nbJustificatifs, $montantValide, $aujourdhui, $idEtat);
+
         return view('Validation/validation');
     }
 }
