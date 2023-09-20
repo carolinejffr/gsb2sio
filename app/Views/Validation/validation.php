@@ -20,7 +20,7 @@ if ($_SESSION['login'] == NULL)
 
 <?= $this->section("contenu") ?>
 
-<p>La ligne a bien été supprimée.</p>
+<p>La modification de vos notes de frais a bien été prise en compte.</p>
 <form action="note" method="post">
 <input type='hidden' id='login' name='login' value='<?php echo $_SESSION['login'] ?>'/>
 <input type='hidden' id='mois' name='mois' value='<?php echo $_SESSION['mois'] ?>'/>

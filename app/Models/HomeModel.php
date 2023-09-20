@@ -80,8 +80,18 @@ class HomeModel extends Model
 
     public static function getReponse()
     {
-        $reponse = self::$bdd->prepare('SELECT * FROM gsbv2.FicheFrais WHERE FicheFrais.mois = ?');
+        $reponse = self::$bdd->prepare('SELECT * FROM gsbv2.FicheFrais');
         return $reponse;
+    }
+
+    public static function getRow()
+    {
+        $sql = "SELECT * FROM FicheFrais";
+        $result = self::$bdd->prepare('SELECT * FROM gsbv2.FicheFrais');
+        $result = self::$bdd->query($sql);
+        $row = $result->fetch();
+
+        return $row;
     }
 
     public static function getFicheFrais($mois)
@@ -93,7 +103,15 @@ class HomeModel extends Model
 
     public static function supprimerLigne($bdd, $id)
     {
-        $reponse = $bdd->prepare('DELETE FROM gsbv2.FicheFrais WHERE idFrais = ?');
+        $reponse = self::$bdd->prepare('DELETE FROM gsbv2.FicheFrais WHERE idFrais = ?');
 	    $reponse->execute(array($id));
+    }
+
+    public static function ajouterLigne($idVisiteur, $mois, $nbJustificatifs, $montantValide, $aujourdhui, $idEtat)
+    {
+        $reponse = self::$bdd->prepare("INSERT INTO `gsbv2`.`FicheFrais` 
+        (`idVisiteur`, `mois`, `nbJustificatifs`, `montantValide`, `dateModif`, `idEtat`) 
+        VALUES ('$idVisiteur', '$mois', '$nbJustificatifs', '$montantValide', '$aujourdhui', '$idEtat');");
+		$reponse->execute(array());
     }
 }

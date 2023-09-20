@@ -65,9 +65,28 @@ class Home extends BaseController
 
     public function nouveau(): string
     {
-        $model = new HomeModel;
         
-        return view('Nouveau/nouveau');
+        session_start();
+        $model = new HomeModel;
+        try
+        {
+            $bdd = $model::ConnexionBDD();
+        }
+        catch (Exception $e)
+	    {
+		    die('Erreur : ' . $e->getMessage());
+	    }
+
+        $login = $_SESSION['login'];
+        $data['login'] = $login;
+
+        $data['id'] = $model::getIdUtilisateur($login);
+        $data['mois'] = $_SESSION['mois'];
+
+        date_default_timezone_set('Europe/Paris');
+	    $data['aujourdhui'] = date('Y-m-d H:i:s');
+
+        return view('Nouveau/nouveau', $data);
     }
 
     public function edition(): string
@@ -92,7 +111,34 @@ class Home extends BaseController
 	    {
 		    die('Erreur : ' . $e->getMessage());
 	    }
+
         $model::supprimerLigne($bdd, $id);
-        return view('Supprimer/supprimer');
+        
+        return view('Validation/validation');
+    }
+
+    public function ajouter(): string
+    {
+        $model = new HomeModel;
+
+        // On se connecte à la BDD
+        try
+        {
+            $bdd = $model::ConnexionBDD();
+        }
+        catch (Exception $e)
+	    {
+		    die('Erreur : ' . $e->getMessage());
+	    }
+
+        $idVisiteur = $_POST['idVisiteur'];
+        $mois = $_POST['mois'];
+        $nbJustificatifs = $_POST['nbJustificatifs'];
+        $montantValide = $_POST['montantValide'];
+        $aujourdhui = $_POST['aujourdhui'];
+        $idEtat = $_POST['idEtat'];
+        $model::ajouterLigne($idVisiteur, $mois, $nbJustificatifs, $montantValide, $aujourdhui, $idEtat);
+
+        return view('Validation/validation');
     }
 }

@@ -17,7 +17,6 @@ if (esc($login) == NULL)
 <?= $this->section("titre") ?>GSB 2SIO<?= $this->endSection() ?>
 
 <?= $this->section("h1") ?>
-
 	<a class='btn btn-success btn-sm' href='selection'>Changer de mois</a>
 	<a class='btn btn-danger btn-sm' href='deconnexion'>Se déconnecter</a>
 
@@ -33,7 +32,11 @@ if (esc($login) == NULL)
 		echo esc($nom);
 	?>.
 	</p>
-	<a class="btn btn-primary" href="nouveau" role="button">Nouveau</a>
+	<form action='nouveau' method='post'>
+		<input type='hidden' id='login' name='login' value='<?php $_SESSION['login'] ?>'/>
+		<input type='submit' class="btn btn-primary" value='Nouveau'/>
+	</form>
+	
 	<table class="table">
 		<thead class="text-bg-dark p-3">
 			<tr>
@@ -69,7 +72,7 @@ if (esc($login) == NULL)
 					{
 						echo "
 						<a class='btn btn-primary btn-sm' href='edition?idFrais=$donnees[idFrais]'>Modifier</a>
-						<a class='btn btn-danger btn-sm' href='supprimer?idFrais=$donnees[idFrais]'>Supprimer</a>
+						<a class='btn btn-danger btn-sm' href='validation?idFrais=$donnees[idFrais]'>Supprimer</a>
 						";
 					}
 					echo 
