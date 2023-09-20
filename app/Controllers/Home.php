@@ -91,54 +91,116 @@ class Home extends BaseController
 
     public function edition(): string
     {
-        return view('Edition/edition');
+        session_start();
+        $model = new HomeModel;
+        try
+        {
+            $bdd = $model::ConnexionBDD();
+        }
+        catch (Exception $e)
+        {
+            die('Erreur : ' . $e->getMessage());
+        }
+
+        $login = $_SESSION['login'];
+        $data['login'] = $login;
+
+        $data['id'] = $model::getIdUtilisateur($login);
+
+        date_default_timezone_set('Europe/Paris');
+        $data['aujourdhui'] = date('Y-m-d H:i:s');
+
+        $id = $_GET['idFrais'];
+
+        $row = $model::afficherLigne($id);
+        $data['row'] = $row;
+        $data['nbJustificatifs'] = $row['nbJustificatifs'];
+        $data['mois'] = $row['mois'];
+        $data['montantValide'] = $row['montantValide'];
+        $data['idEtat'] = $row['idEtat'];
+        $data['idFrais'] = $_GET["idFrais"];
+
+        return view('Edition/edition', $data);
     }
 
     public function deconnexion(): string
     {
         return view('Deconnexion/deconnexion');
     }
-    public function supprimer(): string
+
+    public function validation($modeEdition = false): string
     {
-        $model = new HomeModel;
-        $id = $_GET['idFrais'];
-        // On se connecte à la BDD
-        try
+        // Cas suppression
+        if ( $_SERVER['REQUEST_METHOD'] == 'GET' )
         {
-            $bdd = $model::ConnexionBDD();
+            $model = new HomeModel;
+            $id = $_GET['idFrais'];
+            // On se connecte à la BDD
+            try
+            {
+                $bdd = $model::ConnexionBDD();
+            }
+            catch (Exception $e)
+            {
+                die('Erreur : ' . $e->getMessage());
+            }
+
+            $model::supprimerLigne($bdd, $id);
+
+            return view('Validation/validation');
         }
-        catch (Exception $e)
-	    {
-		    die('Erreur : ' . $e->getMessage());
-	    }
-
-        $model::supprimerLigne($bdd, $id);
-        
-        return view('Validation/validation');
-    }
-
-    public function ajouter(): string
-    {
-        $model = new HomeModel;
-
-        // On se connecte à la BDD
-        try
+        else if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
         {
-            $bdd = $model::ConnexionBDD();
+            $modeEdition = $_POST['modeEdition'];
+            if ($modeEdition == 0)
+            {
+                // Cas nouveau
+                $model = new HomeModel;
+
+                // On se connecte à la BDD
+                try
+                {
+                    $bdd = $model::ConnexionBDD();
+                }
+                catch (Exception $e)
+                {
+                    die('Erreur : ' . $e->getMessage());
+                }
+
+                $idVisiteur = $_POST['idVisiteur'];
+                $mois = $_POST['mois'];
+                $nbJustificatifs = $_POST['nbJustificatifs'];
+                $montantValide = $_POST['montantValide'];
+                $aujourdhui = $_POST['aujourdhui'];
+                $idEtat = $_POST['idEtat'];
+                $model::ajouterLigne($idVisiteur, $mois, $nbJustificatifs, $montantValide, $aujourdhui, $idEtat);
+
+                return view('Validation/validation');
+            }
+            else
+            {
+                // Cas édition
+                $model = new HomeModel;
+
+                // On se connecte à la BDD
+                try
+                {
+                    $bdd = $model::ConnexionBDD();
+                }
+                catch (Exception $e)
+                {
+                    die('Erreur : ' . $e->getMessage());
+                }
+                $mois = $_POST['mois'];
+                $nbJustificatifs = $_POST['nbJustificatifs'];
+                $montantValide = $_POST['montantValide'];
+                $aujourdhui = $_POST['aujourdhui'];
+                $idEtat = $_POST['idEtat'];
+                $idFrais = $_POST['idFrais'];
+                $model::modifierLigne($mois, $nbJustificatifs, $montantValide, $aujourdhui, $idEtat, $idFrais);
+
+                return view('Validation/validation');
+            }
         }
-        catch (Exception $e)
-	    {
-		    die('Erreur : ' . $e->getMessage());
-	    }
-
-        $idVisiteur = $_POST['idVisiteur'];
-        $mois = $_POST['mois'];
-        $nbJustificatifs = $_POST['nbJustificatifs'];
-        $montantValide = $_POST['montantValide'];
-        $aujourdhui = $_POST['aujourdhui'];
-        $idEtat = $_POST['idEtat'];
-        $model::ajouterLigne($idVisiteur, $mois, $nbJustificatifs, $montantValide, $aujourdhui, $idEtat);
-
-        return view('Validation/validation');
     }
 }

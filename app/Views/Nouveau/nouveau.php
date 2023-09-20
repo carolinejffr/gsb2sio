@@ -12,8 +12,9 @@
 
 <?= $this->section("contenu") ?>
 
-<h2>Modification</h2>
+<h2>Nouveau</h2>
 <form action="validation" method="post">
+	<input type="hidden" id="modeEdition" name="modeEdition"  value="0"/>
 	<input type="hidden" id="idVisiteur" name="idVisiteur"  value="<?php echo esc($id); ?>"/>
 	
 	<label>Mois en cours (non-modifiable)</label>
@@ -33,15 +34,13 @@
 		<option value="VA">Validée et mise en paiement</option>
 	</select>
 
-	
-
 	<input type="hidden" id="aujourdhui" name="aujourdhui"  value="<?php echo esc($aujourdhui) ?>"/>
-	<button type="submit">Valider</button>
+	<button type="submit" class="btn btn-primary">Valider</button>
 </form>
 
 <form action="note" method="post">
 	<input type='hidden' id='login' name='login' value='<?php echo $_SESSION['login'] ?>'/>
 	<input type='hidden' id='mois' name='mois' value='<?php echo esc($mois); ?>'/>
-	<button type="submit">Annuler</button>
+	<button type="submit" class="btn btn-outline-primary">Annuler</button>
 </form>
 <?= $this->endSection() ?>
