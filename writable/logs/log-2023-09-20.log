@@ -335,3 +335,74 @@ in APPPATH\Controllers\Home.php on line 176.
  3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
  4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:42:24 --> Undefined variable $id
+in APPPATH\Views\Forfait\forfait.php on line 18.
+ 1 APPPATH\Views\Forfait\forfait.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\wamp64\\www\\gsb2sio\\app\\Views\\Forfait\\forfait.php', 18)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\gsb2sio\\app\\Views\\Forfait\\forfait.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Forfait/forfait', [], true)
+ 5 APPPATH\Controllers\Home.php(209): view('Forfait/forfait')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home::forfait()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:48:25 --> Undefined variable $model
+in APPPATH\Controllers\Home.php on line 213.
+ 1 APPPATH\Controllers\Home.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $model', 'C:\\wamp64\\www\\gsb2sio\\app\\Controllers\\Home.php', 213)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home::forfait()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:48:53 --> Call to a member function prepare() on null
+in APPPATH\Models\HomeModel.php on line 57.
+ 1 APPPATH\Controllers\Home.php(215): App\Models\HomeModel::getIdUtilisateur('dandre')
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home::forfait()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:50:21 --> Call to a member function prepare() on null
+in APPPATH\Models\HomeModel.php on line 57.
+ 1 APPPATH\Controllers\Home.php(215): App\Models\HomeModel::getIdUtilisateur('dandre')
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home::forfait()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 20:51:27 --> Undefined variable $id
+in APPPATH\Views\Forfait\forfait.php on line 17.
+ 1 APPPATH\Views\Forfait\forfait.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\wamp64\\www\\gsb2sio\\app\\Views\\Forfait\\forfait.php', 17)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\gsb2sio\\app\\Views\\Forfait\\forfait.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Forfait/forfait', [], true)
+ 5 APPPATH\Controllers\Home.php(225): view('Forfait/forfait')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home::forfait()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 21:10:03 --> Too few arguments to function App\Models\HomeModel::nouveauFraisForfait(), 0 passed in C:\wamp64\www\gsb2sio\app\Controllers\Home.php on line 242 and exactly 4 expected
+in APPPATH\Models\HomeModel.php on line 136.
+ 1 APPPATH\Controllers\Home.php(242): App\Models\HomeModel::nouveauFraisForfait()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home::nouvelleFicheForfait()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 21:10:40 --> Too few arguments to function App\Models\HomeModel::nouveauFraisForfait(), 0 passed in C:\wamp64\www\gsb2sio\app\Controllers\Home.php on line 242 and exactly 4 expected
+in APPPATH\Models\HomeModel.php on line 136.
+ 1 APPPATH\Controllers\Home.php(242): App\Models\HomeModel::nouveauFraisForfait()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home::nouvelleFicheForfait()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 21:11:52 --> Too few arguments to function App\Models\HomeModel::nouveauFraisForfait(), 0 passed in C:\wamp64\www\gsb2sio\app\Controllers\Home.php on line 242 and exactly 5 expected
+in APPPATH\Models\HomeModel.php on line 136.
+ 1 APPPATH\Controllers\Home.php(242): App\Models\HomeModel::nouveauFraisForfait()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home::nouvelleFicheForfait()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 23:12:30 --> Undefined variable $aujourdhui
+in APPPATH\Controllers\Home.php on line 252.
+ 1 APPPATH\Controllers\Home.php(252): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $aujourdhui', 'C:\\wamp64\\www\\gsb2sio\\app\\Controllers\\Home.php', 252)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home::nouvelleFicheForfait()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

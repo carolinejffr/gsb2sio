@@ -13,8 +13,14 @@
 <?= $this->endSection() ?>
 
 <?= $this->section("contenu") ?>
-
-    <p>Veuillez choisir le mois à afficher.</p>
+    <h2>Bienvenue chez GSB !</h2>
+    
+    <h3>Créer une nouvelle fiche</h3>
+    <a class="btn btn-primary" href="forfait" role="button">Fiche forfait</a>
+    <a class="btn btn-primary" href="horsforfait" role="button">Fiche hors-forfait</a>
+    <br/>
+    <h3>Consulter toutes mes fiches frais</h3>
+    <p>Choississez le mois à afficher</p>
     <form action="note" method="post">
         <div class="row mb-3">
             <label class="col-sm-3 col-form-label">Mois (1 = janvier, etc.)</label>

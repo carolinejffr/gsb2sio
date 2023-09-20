@@ -203,4 +203,54 @@ class Home extends BaseController
             }
         }
     }
+
+    public static function forfait()
+    {
+        session_start();
+        $model = new HomeModel;
+        try
+        {
+            $bdd = $model::ConnexionBDD();
+        }
+        catch (Exception $e)
+	    {
+		    die('Erreur : ' . $e->getMessage());
+	    }
+
+        $login = $_SESSION['login'];
+        $data['login'] = $login;
+
+        $data['id'] = $model::getIdUtilisateur($login);
+        $data['mois'] = date("n");
+        
+        return view('Forfait/forfait', $data); 
+    }
+
+    public static function nouvelleFicheForfait()
+    {
+        $model = new HomeModel;
+           
+        // On se connecte à la BDD
+        try
+        {
+            $bdd = $model::ConnexionBDD();
+        }
+        catch (Exception $e)
+        {
+            die('Erreur : ' . $e->getMessage());
+        }
+
+        $idVisiteur = $_POST['idVisiteur'];
+        $mois = $_POST['mois'];
+        $idFraisForfait = $_POST['idFraisForfait'];
+        $quantite = $_POST['quantite'];
+
+        date_default_timezone_set('Europe/Paris');
+	    $aujourdhui = date('Y-m-d H:i:s');
+
+
+        $model::nouveauFraisForfait($idVisiteur, $mois, $idFraisForfait, $quantite, $aujourdhui);
+
+        return view('Forfait/nouvelleFicheForfait');
+    }
 }
