@@ -132,4 +132,17 @@ class HomeModel extends Model
         "WHERE idFrais = '$idFrais'");
         $reponse->execute(array());
     }
+
+    public static function nouveauFraisForfait($idVisiteur, $mois, $idFraisForfait, $quantite, $aujourdhui)
+    {
+        $reponse = self::$bdd->prepare("INSERT INTO `gsbv2`.`lignefraisforfait` 
+        (`idVisiteur`, `mois`, `idFraisForfait`, `quantite`) 
+        VALUES ('$idVisiteur', '$mois', '$idFraisForfait', '$quantite');");
+		$reponse->execute(array());
+
+        $reponse = self::$bdd->prepare("INSERT INTO `gsbv2`.`FicheFrais` 
+        (`idVisiteur`, `mois`, `nbJustificatifs`, `montantValide`, `dateModif`, `idEtat`) 
+        VALUES ('$idVisiteur', '$mois', '0', '0', '$aujourdhui', 'CR');");
+		$reponse->execute(array());
+    }
 }
