@@ -17,7 +17,7 @@ if (esc($login) == NULL)
 <?= $this->section("titre") ?>GSB 2SIO<?= $this->endSection() ?>
 
 <?= $this->section("h1") ?>
-	<a class='btn btn-success btn-sm' href='selection'>Changer de mois</a>
+	<a class='btn btn-success btn-sm' href='selection'>Retour au menu principal</a>
 	<a class='btn btn-danger btn-sm' href='deconnexion'>Se déconnecter</a>
 
 <?= $this->endSection() ?>
