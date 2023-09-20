@@ -115,8 +115,51 @@ class Home extends BaseController
         
         return view('Validation/validation');
     }
-    public function ajouter(): string
+    public function nouveauPost(): string
     {
+        $model = new HomeModel;
+        $id = $_GET['idFrais'];
+        // On se connecte à la BDD
+        try
+        {
+            $bdd = $model::ConnexionBDD();
+        }
+        catch (Exception $e)
+	    {
+		    die('Erreur : ' . $e->getMessage());
+	    }
+        // si méthode POST : update des données
+        $mois = date('n');
+        $nbJustificatifs = $_POST["nbJustificatifs"];
+        $montantValide = $_POST["montantValide"];
+        $idEtat = $_POST["idEtat"];
+        
+        do {
+            // On vérifie que tous les champs sont renseignés
+            if (empty($mois) || empty($nbJustificatifs) || empty($montantValide) || empty($idEtat))
+                {
+                    $errorMessage = "Remplissez tous les champs";
+                    break;
+                }
+            // Modification SQL
+            
+            
+            $idVisiteur = esc($id);
+
+            date_default_timezone_set('Europe/Paris');
+            $aujourdhui = date('Y-m-d H:i:s');
+            
+            $reponse = $bdd->prepare("INSERT INTO `gsbv2`.`FicheFrais` 
+            (`idVisiteur`, `mois`, `nbJustificatifs`, `montantValide`, `dateModif`, `idEtat`) 
+            VALUES ('$idVisiteur', '$mois', '$nbJustificatifs', '$montantValide', '$aujourdhui', '$idEtat');");
+            $reponse->execute(array());
+            
+            $successMessage = "Note de frais correctement éditée";
+                
+            header("location:validation");
+            exit;
+            $reponse->closeCursor();
+        } while (false);
         return view('Validation/validation');
     }
 }

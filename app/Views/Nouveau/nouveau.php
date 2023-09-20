@@ -39,7 +39,7 @@
         $montantValide = 0;
         $idEtat = "CL";
     }
-    else
+    else if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
     {
         // si méthode POST : update des données
         $mois = date('n');

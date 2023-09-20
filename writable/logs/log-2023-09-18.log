@@ -167,3 +167,57 @@ in APPPATH\Controllers\Home.php on line 55.
  3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
  4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-18 14:40:27 --> Undefined array key "nbJustificatifs"
+in APPPATH\Views\Nouveau\nouveau.php on line 46.
+ 1 APPPATH\Views\Nouveau\nouveau.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nbJustificatifs"', 'C:\\wamp64\\www\\gsb2sio\\app\\Views\\Nouveau\\nouveau.php', 46)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\gsb2sio\\app\\Views\\Nouveau\\nouveau.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Nouveau/nouveau', [], true)
+ 5 APPPATH\Controllers\Home.php(88): view('Nouveau/nouveau', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->nouveau()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-18 14:41:57 --> Undefined array key "nbJustificatifs"
+in APPPATH\Views\Nouveau\nouveau.php on line 46.
+ 1 APPPATH\Views\Nouveau\nouveau.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nbJustificatifs"', 'C:\\wamp64\\www\\gsb2sio\\app\\Views\\Nouveau\\nouveau.php', 46)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\gsb2sio\\app\\Views\\Nouveau\\nouveau.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Nouveau/nouveau', [], true)
+ 5 APPPATH\Controllers\Home.php(88): view('Nouveau/nouveau', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->nouveau()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-18 14:43:12 --> Undefined array key "nbJustificatifs"
+in APPPATH\Views\Nouveau\nouveau.php on line 46.
+ 1 APPPATH\Views\Nouveau\nouveau.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nbJustificatifs"', 'C:\\wamp64\\www\\gsb2sio\\app\\Views\\Nouveau\\nouveau.php', 46)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\gsb2sio\\app\\Views\\Nouveau\\nouveau.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Nouveau/nouveau', [], true)
+ 5 APPPATH\Controllers\Home.php(88): view('Nouveau/nouveau', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->nouveau()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-18 14:46:56 --> Undefined constant "nbJustificatifs"
+in APPPATH\Views\Nouveau\nouveau.php on line 46.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Nouveau/nouveau', [], true)
+ 4 APPPATH\Controllers\Home.php(88): view('Nouveau/nouveau', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->nouveau()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-18 14:49:05 --> Undefined array key "nbJustificatifs"
+in APPPATH\Views\Nouveau\nouveau.php on line 46.
+ 1 APPPATH\Views\Nouveau\nouveau.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nbJustificatifs"', 'C:\\wamp64\\www\\gsb2sio\\app\\Views\\Nouveau\\nouveau.php', 46)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\gsb2sio\\app\\Views\\Nouveau\\nouveau.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Nouveau/nouveau', [], true)
+ 5 APPPATH\Controllers\Home.php(88): view('Nouveau/nouveau', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->nouveau()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
