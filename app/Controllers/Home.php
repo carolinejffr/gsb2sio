@@ -226,8 +226,33 @@ class Home extends BaseController
         return view('Forfait/forfait', $data); 
     }
 
+    public function horsForfait()
+    {
+        session_start();
+        $model = new HomeModel;
+           
+        // On se connecte à la BDD
+        try
+        {
+            $bdd = $model::ConnexionBDD();
+        }
+        catch (Exception $e)
+        {
+            die('Erreur : ' . $e->getMessage());
+        }
+
+        $login = $_SESSION['login'];
+        $data['login'] = $login;
+
+        $data['id'] = $model::getIdUtilisateur($login);
+        $data['mois'] = date("n");
+
+        return view('HorsForfait/horsforfait', $data);
+    }
+
     public static function nouvelleFicheForfait()
     {
+        session_start();
         $model = new HomeModel;
            
         // On se connecte à la BDD
@@ -250,6 +275,34 @@ class Home extends BaseController
 
 
         $model::nouveauFraisForfait($idVisiteur, $mois, $idFraisForfait, $quantite, $aujourdhui);
+
+        return view('Forfait/nouvelleFicheForfait');
+    }
+
+    public static function nouvelleHorsForfait()
+    {
+        session_start();
+        $model = new HomeModel;
+           
+        // On se connecte à la BDD
+        try
+        {
+            $bdd = $model::ConnexionBDD();
+        }
+        catch (Exception $e)
+        {
+            die('Erreur : ' . $e->getMessage());
+        }
+        
+        $idVisiteur = $_POST['idVisiteur'];
+        $mois = $_POST['mois'];
+        $libelle = $_POST['libelle'];
+        $montant = $_POST['montant'];
+
+        date_default_timezone_set('Europe/Paris');
+	    $aujourdhui = date('Y-m-d H:i:s');
+
+        $model::nouveauHorsForfait($idVisiteur, $mois, $libelle, $aujourdhui, $montant);
 
         return view('Forfait/nouvelleFicheForfait');
     }

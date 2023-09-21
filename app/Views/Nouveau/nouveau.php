@@ -23,7 +23,7 @@
 	<label>Nombre de justificatifs</label>
 	<input type="number" class="form-control" name="nbJustificatifs" value="0">
 
-	<label>Montant valide</label>
+	<label>Montant validé</label>
 	<input type="number" class="form-control" name="montantValide" value="0.01" min="0.01" step="0.01">
 
 	<label>ID état</label>
