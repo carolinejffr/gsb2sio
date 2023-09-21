@@ -25,7 +25,7 @@ create table if not exists `Visiteur` (
     `adresse` varchar(255) not null,
     `cp` int not null,
     `ville` varchar(255) not null,
-    `dateEmbauche` date not null,
+    `dateEmbauche` datetime not null,
     constraint `PK_Visiteur` primary key (`id`)
 )ENGINE=InnoDB, CHARSET=UTF8MB4;
 
@@ -59,11 +59,11 @@ create table if not exists `LigneFraisHorsForfait` (
     `idVisiteur` varchar(4) not null,
     `mois` varchar(10) not null,
     `libelle` varchar(255) not null,
-    `date` date not null,
+    `date` datetime not null,
     `montant` int not null,
     constraint `PK_LigneFraisHorsForfait` primary key (`id`),
     constraint `FK_LigneFraisHorsForfait_idVisiteur_mois` foreign key (`idFrais`,`idVisiteur`,`mois`) references FicheFrais(`idFrais`,`idVisiteur`,`mois`)
 )ENGINE=InnoDB, CHARSET=UTF8MB4;
 
 ALTER TABLE `gsbv2`.`fichefrais` 
-ADD UNIQUE INDEX `idFrais_UNIQUE` (`idFrais` ASC) VISIBLE;
+ADD UNIQUE INDEX `idFrais_UNIQUE` (`idFrais` ASC);
