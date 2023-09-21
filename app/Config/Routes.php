@@ -17,7 +17,9 @@ $routes->post('validation', 'Home::validation');
 $routes->get('deconnexion', 'Home::deconnexion');
 $routes->post('login', 'Home::login');
 $routes->get('forfait', 'Home::forfait');
+$routes->get('horsforfait', 'Home::horsForfait');
 $routes->post('nouvelleFicheForfait', 'Home::nouvelleFicheForfait');
+$routes->post('nouvelleHorsForfait', 'Home::nouvelleHorsForfait');
 // Redirige sur index car on est pas censé pouvoir y aller en GET
 $routes->get('login', 'Home::index');
 

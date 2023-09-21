@@ -17,15 +17,11 @@
     <input type="hidden" id="idVisiteur" name="idVisiteur"  value="<?php echo esc($id); ?>"/>
     <label>Mois en cours (non-modifiable)</label>
 	<input type="number" class="form-control" name="mois" value="<?php echo esc($mois); ?>" min="1" max="12" step="1" readonly>
-    <label>ID Frais forfait</label>
-	<?php
-	//TODO
-	// Id auto incrément
-	//libelle
-	//date
-	//Montant
-
-	?>
+    <label>Libellé</label><br/>
+	<input type="text" name="libelle" id="libelle" value=""/>
+	<br/>
+	<label>Montant</label>
+	<input type="number" class="form-control" name="montant" value="0.01" min="0.01" step="0.01">
     
     <button type="submit" class="btn btn-primary">Valider</button>
 </form>

@@ -135,14 +135,43 @@ class HomeModel extends Model
 
     public static function nouveauFraisForfait($idVisiteur, $mois, $idFraisForfait, $quantite, $aujourdhui)
     {
-        $reponse = self::$bdd->prepare("INSERT INTO `gsbv2`.`lignefraisforfait` 
-        (`idVisiteur`, `mois`, `idFraisForfait`, `quantite`) 
-        VALUES ('$idVisiteur', '$mois', '$idFraisForfait', '$quantite');");
-		$reponse->execute(array());
-
+        // fiche frais
         $reponse = self::$bdd->prepare("INSERT INTO `gsbv2`.`FicheFrais` 
         (`idVisiteur`, `mois`, `nbJustificatifs`, `montantValide`, `dateModif`, `idEtat`) 
         VALUES ('$idVisiteur', '$mois', '0', '0', '$aujourdhui', 'CR');");
+		$reponse->execute(array());
+
+        // Récupération de l'idFrais
+       $reponse = self::$bdd->prepare('SELECT idFrais FROM gsbv2.FicheFrais WHERE idVisiteur = ? AND dateModif = ?');
+       $reponse->execute(array($idVisiteur, $aujourdhui));
+       $idFrais = $reponse->fetch()[0];
+
+        // frais forfait
+        $reponse = self::$bdd->prepare("INSERT INTO `gsbv2`.`lignefraisforfait` 
+        (`idVisiteur`, `idFrais`, `mois`, `idFraisForfait`, `quantite`) 
+        VALUES ('$idVisiteur', '$idFrais', '$mois', '$idFraisForfait', '$quantite');");
+		$reponse->execute(array());
+
+        
+    }
+
+    public static function nouveauHorsForfait($idVisiteur, $mois, $libelle, $date, $montant)
+    {
+        // fiche frais
+        $reponse = self::$bdd->prepare("INSERT INTO `gsbv2`.`FicheFrais` 
+        (`idVisiteur`, `mois`, `nbJustificatifs`, `montantValide`, `dateModif`, `idEtat`) 
+        VALUES ('$idVisiteur', '$mois', '0', '0', '$date', 'CR');");
+		$reponse->execute(array());
+
+        // Récupération de l'idFrais
+       $reponse = self::$bdd->prepare('SELECT idFrais FROM gsbv2.FicheFrais WHERE idVisiteur = ? AND dateModif = ?');
+       $reponse->execute(array($idVisiteur, $date));
+       $idFrais = $reponse->fetch()[0];
+
+        // frais hors forfait
+        $reponse = self::$bdd->prepare("INSERT INTO `gsbv2`.`lignefraishorsforfait` 
+        (`idVisiteur`, `mois`, `idFrais`, `libelle`, `date`, `montant`) 
+        VALUES ('$idVisiteur', '$mois', '$idFrais', '$libelle', '$date', '$montant');");
 		$reponse->execute(array());
     }
 }

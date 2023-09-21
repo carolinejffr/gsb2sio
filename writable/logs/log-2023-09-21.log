@@ -1,0 +1,119 @@
+CRITICAL - 2023-09-21 13:55:24 --> Undefined constant "App\Controllers\HorsForfait"
+in APPPATH\Controllers\Home.php on line 274.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->horsForfait()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-21 13:55:45 --> Undefined variable $data
+in APPPATH\Controllers\Home.php on line 274.
+ 1 APPPATH\Controllers\Home.php(274): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\wamp64\\www\\gsb2sio\\app\\Controllers\\Home.php', 274)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->horsForfait()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-21 13:55:59 --> Undefined variable $id
+in APPPATH\Views\HorsForfait\horsforfait.php on line 17.
+ 1 APPPATH\Views\HorsForfait\horsforfait.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\wamp64\\www\\gsb2sio\\app\\Views\\HorsForfait\\horsforfait.php', 17)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\gsb2sio\\app\\Views\\HorsForfait\\horsforfait.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('HorsForfait/horsforfait', [], true)
+ 5 APPPATH\Controllers\Home.php(274): view('HorsForfait/horsforfait')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->horsForfait()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-21 11:56:45 --> Undefined variable $_SESSION
+in APPPATH\Controllers\Home.php on line 271.
+ 1 APPPATH\Controllers\Home.php(271): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $_SESSION', 'C:\\wamp64\\www\\gsb2sio\\app\\Controllers\\Home.php', 271)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->horsForfait()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-21 11:57:02 --> Undefined variable $_SESSION
+in APPPATH\Controllers\Home.php on line 271.
+ 1 APPPATH\Controllers\Home.php(271): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $_SESSION', 'C:\\wamp64\\www\\gsb2sio\\app\\Controllers\\Home.php', 271)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->horsForfait()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-21 11:57:18 --> Undefined variable $id
+in APPPATH\Views\HorsForfait\horsforfait.php on line 17.
+ 1 APPPATH\Views\HorsForfait\horsforfait.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\wamp64\\www\\gsb2sio\\app\\Views\\HorsForfait\\horsforfait.php', 17)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\gsb2sio\\app\\Views\\HorsForfait\\horsforfait.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('HorsForfait/horsforfait', [], true)
+ 5 APPPATH\Controllers\Home.php(279): view('HorsForfait/horsforfait')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->horsForfait()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-21 11:57:43 --> Undefined variable $id
+in APPPATH\Views\HorsForfait\horsforfait.php on line 17.
+ 1 APPPATH\Views\HorsForfait\horsforfait.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\wamp64\\www\\gsb2sio\\app\\Views\\HorsForfait\\horsforfait.php', 17)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\gsb2sio\\app\\Views\\HorsForfait\\horsforfait.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('HorsForfait/horsforfait', [], true)
+ 5 APPPATH\Controllers\Home.php(279): view('HorsForfait/horsforfait')
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->horsForfait()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-21 14:01:48 --> Undefined variable $montant
+in APPPATH\Controllers\Home.php on line 305.
+ 1 APPPATH\Controllers\Home.php(305): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $montant', 'C:\\wamp64\\www\\gsb2sio\\app\\Controllers\\Home.php', 305)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home::nouvelleHorsForfait()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-21 14:02:04 --> session_start(): Ignoring session_start() because a session is already active
+in APPPATH\Views\Forfait\nouvelleFicheForfait.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'session_start(): Ignoring session_start() because a session is already active', 'C:\\wamp64\\www\\gsb2sio\\app\\Views\\Forfait\\nouvelleFicheForfait.php', 4)
+ 2 APPPATH\Views\Forfait\nouvelleFicheForfait.php(4): session_start()
+ 3 SYSTEMPATH\View\View.php(226): include('C:\\wamp64\\www\\gsb2sio\\app\\Views\\Forfait\\nouvelleFicheForfait.php')
+ 4 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Forfait/nouvelleFicheForfait', [], true)
+ 6 APPPATH\Controllers\Home.php(307): view('Forfait/nouvelleFicheForfait')
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home::nouvelleHorsForfait()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-21 14:03:23 --> SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'a17-9-ETP' for key 'lignefraisforfait.PRIMARY'
+in APPPATH\Models\HomeModel.php on line 141.
+ 1 APPPATH\Models\HomeModel.php(141): PDOStatement->execute([])
+ 2 APPPATH\Controllers\Home.php(277): App\Models\HomeModel::nouveauFraisForfait('a17', '9', 'ETP', '1', '2023-09-21 14:03:23')
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home::nouvelleFicheForfait()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-21 14:16:43 --> Undefined variable $dateModif
+in APPPATH\Models\HomeModel.php on line 146.
+ 1 APPPATH\Models\HomeModel.php(146): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dateModif', 'C:\\wamp64\\www\\gsb2sio\\app\\Models\\HomeModel.php', 146)
+ 2 APPPATH\Controllers\Home.php(277): App\Models\HomeModel::nouveauFraisForfait('a17', '9', 'ETP', '1', '2023-09-21 14:16:43')
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home::nouvelleFicheForfait()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-21 14:17:44 --> Undefined variable $aujourdhui
+in APPPATH\Models\HomeModel.php on line 163.
+ 1 APPPATH\Models\HomeModel.php(163): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $aujourdhui', 'C:\\wamp64\\www\\gsb2sio\\app\\Models\\HomeModel.php', 163)
+ 2 APPPATH\Controllers\Home.php(305): App\Models\HomeModel::nouveauHorsForfait('a17', '9', 'oui', '2023-09-21 14:17:44', '2')
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home::nouvelleHorsForfait()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-21 14:18:33 --> Undefined variable $aujourdhui
+in APPPATH\Models\HomeModel.php on line 163.
+ 1 APPPATH\Models\HomeModel.php(163): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $aujourdhui', 'C:\\wamp64\\www\\gsb2sio\\app\\Models\\HomeModel.php', 163)
+ 2 APPPATH\Controllers\Home.php(305): App\Models\HomeModel::nouveauHorsForfait('a17', '9', 'eteertz', '2023-09-21 14:18:33', '0.01')
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home::nouvelleHorsForfait()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-21 14:18:50 --> SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`gsbv2`.`lignefraishorsforfait`, CONSTRAINT `FK_LigneFraisHorsForfait_idVisiteur_mois` FOREIGN KEY (`idFrais`, `idVisiteur`, `mois`) REFERENCES `fichefrais` (`idFrais`, `idVisiteur`, `mois`))
+in APPPATH\Models\HomeModel.php on line 175.
+ 1 APPPATH\Models\HomeModel.php(175): PDOStatement->execute([])
+ 2 APPPATH\Controllers\Home.php(305): App\Models\HomeModel::nouveauHorsForfait('a17', '9', 'dsfgdsfg', '2023-09-21 14:18:50', '0.01')
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home::nouvelleHorsForfait()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

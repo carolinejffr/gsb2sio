@@ -25,44 +25,45 @@ create table if not exists `Visiteur` (
     `adresse` varchar(255) not null,
     `cp` int not null,
     `ville` varchar(255) not null,
-    `dateEmbauche` date not null,
+    `dateEmbauche` datetime not null,
     constraint `PK_Visiteur` primary key (`id`)
 )ENGINE=InnoDB, CHARSET=UTF8MB4;
 
 create table if not exists `FicheFrais` (
+	`idFrais` INT NOT NULL AUTO_INCREMENT ,
 	`idVisiteur` varchar(4) not null,
     `mois` varchar(10) not null,
     `nbJustificatifs` int not null,
-    `montantValide` int not null,
+    `montantValide` DECIMAL(10,2) not null,
     `dateModif` datetime not null,
     `idEtat` varchar(2) not null,
-    constraint `PK_FicheFrais` primary key (`idVisiteur`,`mois`,`dateModif`),
+    constraint `PK_FicheFrais` primary key (`idFrais`,`idVisiteur`,`mois`),
     constraint `FK_FicheFrais_idEtat` foreign key (`idEtat`) references Etat(id),
     constraint `FK_FicheFrais_idVisiteur` foreign key (`idVisiteur`) references Visiteur(id)
 )ENGINE=InnoDB, CHARSET=UTF8MB4;
 
 create table if not exists `LigneFraisForfait` (
 	`idVisiteur` varchar(4) not null,
+	`idFrais` INT NOT NULL,
     `mois` varchar(10) not null,
     `idFraisForfait` varchar(3) not null,
     `quantite` int not null,
     constraint `PK_LigneFraisForfait` primary key (`idVisiteur`,`mois`,`idFraisForfait`),
-    constraint `FK_LigneFraisForfait_idVisiteur_mois` foreign key (`idVisiteur`,`mois`) references FicheFrais(`idVisiteur`,`mois`),
+    constraint `FK_LigneFraisForfait_idVisiteur_mois` foreign key (`idFrais`,`idVisiteur`,`mois`) references FicheFrais(`idFrais`,`idVisiteur`,`mois`),
     constraint `FK_LigneFraisForfait_idFraisForfait` foreign key (`idFraisForfait`) references FraisForfait(`id`)
 )ENGINE=InnoDB, CHARSET=UTF8MB4;
 
 create table if not exists `LigneFraisHorsForfait` (
 	`id` int not null auto_increment,
+    `idFrais` int not null,
     `idVisiteur` varchar(4) not null,
     `mois` varchar(10) not null,
     `libelle` varchar(255) not null,
-    `date` date not null,
+    `date` datetime not null,
     `montant` int not null,
     constraint `PK_LigneFraisHorsForfait` primary key (`id`),
-    constraint `FK_LigneFraisHorsForfait_idVisiteur_mois` foreign key (`idVisiteur`,`mois`) references FicheFrais(`idVisiteur`,`mois`)
+    constraint `FK_LigneFraisHorsForfait_idVisiteur_mois` foreign key (`idFrais`,`idVisiteur`,`mois`) references FicheFrais(`idFrais`,`idVisiteur`,`mois`)
 )ENGINE=InnoDB, CHARSET=UTF8MB4;
 
-ALTER TABLE `gsbv2`.`FicheFrais`
-ADD COLUMN `idFrais` INT NOT NULL AUTO_INCREMENT FIRST,
-CHANGE COLUMN `montantValide` `montantValide` DECIMAL(10,2) NOT NULL ,
-ADD UNIQUE INDEX `idFrais_UNIQUE` (`idFrais` ASC) VISIBLE;
+ALTER TABLE `gsbv2`.`fichefrais` 
+ADD UNIQUE INDEX `idFrais_UNIQUE` (`idFrais` ASC);
