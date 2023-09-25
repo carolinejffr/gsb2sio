@@ -40,9 +40,9 @@ class HomeModel extends Model
         return $login;
     }
 
-    public static function verifPassword($mdp)
+    public static function verifPassword($mdp, $login)
     {
-        $reponse = self::$bdd->prepare('SELECT * FROM gsbV2.Visiteur WHERE mdp = ?');
+        $reponse = self::$bdd->prepare('SELECT * FROM gsbV2.Visiteur WHERE mdp = ? AND login =' . '\'' . $login . '\'');
         $reponse->execute(array($mdp));
         if ($reponse->rowCount() < 1)
         {

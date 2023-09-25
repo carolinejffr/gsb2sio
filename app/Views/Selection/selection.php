@@ -1,7 +1,7 @@
 <?= $this->extend("layouts/default") ?>
 
 <?= $this->section("preHTML") ?>
-    <?php session_start();
+    <?php
     $mois = date('n');
     ?>
 <?= $this->endSection() ?>

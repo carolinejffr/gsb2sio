@@ -27,7 +27,7 @@ class Home extends BaseController
 
         // On test les identifiants de connexion
         $data['login_valide'] = $model::verifLogin($_POST['login']);
-        $data['mdp_valide'] = $model::verifPassword($_POST['mdp']);
+        $data['mdp_valide'] = $model::verifPassword($_POST['mdp'], $_POST['login']);
 
         // Vue
         return view('Login/login', $data);
@@ -35,6 +35,8 @@ class Home extends BaseController
 
     public function selectionMois(): string
     {
+        session_start();
+        $_SESSION['mois'] = date('n');
         // La page sélection n'a pas besoin de la base de données (selection valeur entre 1 et 12)
         return view('Selection/selection');
     }
