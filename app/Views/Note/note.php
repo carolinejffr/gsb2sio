@@ -32,10 +32,11 @@ if (esc($login) == NULL)
 		echo esc($nom);
 	?>.
 	</p>
+	<!--
 	<form action='nouveau' method='post'>
-		<input type='hidden' id='login' name='login' value='<?php $_SESSION['login'] ?>'/>
+		<input type='hidden' id='login' name='login' value='<?php // $_SESSION['login'] ?>'/>
 		<input type='submit' class="btn btn-primary" value='Nouveau'/>
-	</form>
+	</form> -->
 	
 	<table class="table">
 		<thead class="text-bg-dark p-3">
