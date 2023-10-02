@@ -16,6 +16,12 @@ Il suffit ensuite de vous connecter à localhost et de naviguer jusqu'au dossier
 #### XAMPP
 * Modifiez C:\xampp\php\php.ini (windows) et enlevez le point-virgule devant "extension=intl".
 * Il suffit ensuite de vous connecter à localhost et de naviguer jusqu'au dossier "public".
+### Spécificités pour Mac
+#### MAMP  
+Il est plus simple de configurer le site avec MAMP qu'avec XAMPP, car il n'y a pas besoin de compiler intl depuis son code source.  
+* Placer le contenu du site dans le dossier htdocs de MAMP, situé dans le dossier application.  
+* [Suivez ce lien](https://documentation.mamp.info/en/MAMP-Mac/FAQ/How-do-I-change-the-password-of-the-MySQL-root-user/) pour changer le mot de passe du compte root.
+* Le site devrait fonctionner.
 ### Spécificités pour Linux
 Les instructions suivantes peuvent changer selon la distribution que vous utilisez.
 * Tout d'abord, installez l'extension intl `sudo apt install php-intl`
