@@ -10,6 +10,7 @@ https://github.com/carolinejffr/gsb2sio/wiki
 * télécharger l'archive et placer son contenu à l'emplacement désiré (www, htdocs...).
 * Créer la base de données avec les scripts du dossier sql.
 * Modifier au besoin les fichiers de configuration de CodeIgniter pour coller à votre système. Par défaut, les login MySQL sont root/password.
+* Faites attention à bien télécharger le fichier .env car il ne se télécharge pas toujours tout seul.
 ### Spécificités pour Windows
 #### WAMP
 Il suffit ensuite de vous connecter à localhost et de naviguer jusqu'au dossier "public".
