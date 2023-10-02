@@ -14,7 +14,7 @@ https://github.com/carolinejffr/gsb2sio/wiki
 #### WAMP
 Il suffit ensuite de vous connecter à localhost et de naviguer jusqu'au dossier "public".
 #### XAMPP
-* Modifiez C:\xampp\php\php.ini (windows) ou Applications/XAMPP/xamppfiles/php.ini (MacOs) et enlevez le point-virgule devant "extension=intl".
+* Modifiez C:\xampp\php\php.ini (windows) et enlevez le point-virgule devant "extension=intl".
 * Il suffit ensuite de vous connecter à localhost et de naviguer jusqu'au dossier "public".
 ### Spécificités pour Linux
 Les instructions suivantes peuvent changer selon la distribution que vous utilisez.
